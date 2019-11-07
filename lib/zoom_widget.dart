@@ -42,13 +42,13 @@ class Zoom extends StatefulWidget {
 }
 
 class _ZoomState extends State<Zoom> with TickerProviderStateMixin {
-  double localTop = 0.0;
+  double localTop = -100.0;
   double changeTop = 0.0;
   double auxTop = 0.0;
   double centerTop = 0.0;
   double scaleTop = 0.0;
   double downTouchTop = 0.0;
-  double localLeft = 0.0;
+  double localLeft = -600.0;
   double changeLeft = 0.0;
   double auxLeft = 0.0;
   double centerLeft = 0.0;
