@@ -19,6 +19,10 @@ class Zoom extends StatefulWidget {
   final double zoomSensibility;
   final bool doubleTapZoom;
 
+  double localTop = -100.0;
+  double localLeft = -600.0;
+
+
   Zoom(
       {Key key,
       this.width,
@@ -35,7 +39,11 @@ class Zoom extends StatefulWidget {
       this.initZoom = 1.0,
       this.enableScroll = true,
       this.zoomSensibility = 1.0,
-      this.doubleTapZoom = true})
+      this.doubleTapZoom = true,
+
+      this.localTop:0,
+      this.localLeft:0
+      })
       : super(key: key);
 
   _ZoomState createState() => _ZoomState();
@@ -104,6 +112,10 @@ class _ZoomState extends State<Zoom> with TickerProviderStateMixin {
         endEscale(globalConstraints);
       }
     });
+
+    localTop = widget.localTop;
+    localLeft = widget.localLeft;
+
     super.initState();
   }
 
